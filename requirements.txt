@@ -1,0 +1,7 @@
+streamlit
+openai
+instructor
+chromadb
+sentence-transformers
+python-dotenv
+pydantic

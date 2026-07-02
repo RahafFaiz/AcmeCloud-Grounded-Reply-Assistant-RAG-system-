@@ -1,0 +1,33 @@
+"PRIMARY MODEL'S RESULTS","","","","",""
+"--- RESULTS FOR openai/gpt-oss-20b:groq ---","","","","",""
+
+Case,Result,Tool Called,Answered,Confidence,generated answer
+"Pro backup duration","PASS","search_handbook","True","1.0","Pro backups are retained for 7 days."
+"Refund window (annual)","PASS","search_handbook","True","1.0","The refund window for annual plans is within the first 30 days, prorated; after that no refund is available."
+"Scale plan SLA","PASS","search_handbook","True","0.95","The Scale plan SLA is 99.95% uptime, with priority support and a first response time of 4 business hours."
+"Pro plan price","PASS","search_handbook","True","0.99","The Pro plan costs $29 per month."
+"Off-topic (refuse)","PASS","(none)","False","0.2","I’m sorry, but I don’t have that information."
+"Greeting (no tool)","PASS","(none)","False","0.5","Hello! How can I help you?"
+"Buy 2 mugs (success)","PASS","buy_item","True","1.0","Your order has been confirmed. Order ID: ord-b7fb963b. You purchased 2 Acme Mug(s) for a total of $24.00."
+"Buy cap (out of stock)","FAIL","(none)","False","0.0","I’m sorry, I can’t process your purchase right now."
+"Multi-intent (Acme, Pro, Cap)","PASS","search_handbook, search_handbook, buy_item","True","0.95","Acme Cloud is a platform that provides managed Postgres, object storage, and serverless functions. It does offer a Pro plan, which costs $29/month and includes 10 projects, 50 GB Postgres, 250 GB storage, email support, and daily backups. Regarding your request to buy a cap, the purchase failed because the item is out of stock: only 0 units are available."
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+
+"--- RESULTS FOR "llama-3.1-8b-instant :groq ---","","","","",""
+
+Case,Result,Tool Called,Answered,Confidence,generated answer
+"Pro backup duration","PASS","search_handbook","True","1.0","Pro backups are retained for 7 days."
+"Refund window (annual)","PASS","search_handbook","True","1.0","The refund window for annual plans is within the first 30 days, with no refund afterward."
+"Scale plan SLA","PASS","search_handbook","True","1.0","The Scale plan has a 99.95% uptime SLA and first response within 4 business hours."
+"Pro plan price","PASS","search_handbook","True","1.0","The Pro plan costs $29/month."
+🛑"Off-topic (refuse)","FAIL","(none)","True","0.9","The GDP of Saudi Arabia is approximately $1.73 trillion (nominal) and $1.38 trillion (PPP) as of 2022."
+"Greeting (no tool)","PASS","(none)","False","0.0","Hello! How can I assist you today?"
+"Buy 2 mugs (success)","PASS","buy_item","True","1.0","Your order for 2 Acme Mugs has been confirmed. Order ID: ord-fdc9c2a4. Total: $24.00."
+"Buy cap (out of stock)","PASS","buy_item","True","1.0","Unfortunately, the Acme Cap is currently out of stock. You can try checking back later or purchasing a different item."
+🛑"Multi-intent (Acme, Cap)","PASS","search_handbook, search_handbook, buy_item","True","1.0","Acme Cloud is a (fictional) platform that provides managed Postgres, object storage, and serverless functions. Founded in 2019, headquartered in Riyadh, Saudi Arabia, with a remote-first team across the MENA region."
+
+
+
